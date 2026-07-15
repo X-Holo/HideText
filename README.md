@@ -1,9 +1,9 @@
 
-# Hide your text by random key
+# Hide-Text
 
-This tool use random numbers to hide your text from search engines finding your internet activity. It has been deployed online: 
+A simple, stateless tool to share your email online without making it searchable on Google.
 
-- https://hide-text.com/
+[🔗 hide-text.com](https://hide-text.com/) | [🛡️ Technical Implementation](#technical-implementation)
 
 ## Use Case
 
