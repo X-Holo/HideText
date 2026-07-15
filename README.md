@@ -1,9 +1,9 @@
 
-# Hide-Text
+# Hide your text by random key
 
-A simple, stateless tool to share your email online without making it searchable on Google.
+This tool use random numbers to hide your text from search engines finding your internet activity. It has been deployed online: 
 
-[🔗 hide-text.com](https://hide-text.com/) | [🛡️ Technical Implementation](#technical-implementation)
+- https://hide-text.com/
 
 ## Use Case
 
@@ -35,6 +35,7 @@ Your privacy remains secure.
 
 1. Encryption involves an XOR operation between the plaintext and a random key; decryption involves a second XOR operation to restore the plaintext. This process occurs entirely within the browser.
 2. The page displaying the ciphertext uses "noindex" and "canonical" tags to prevent Google from indexing it.
+3. The ciphertext and key are included in the URL. Due to URL length limitations, and to ensure reliability, the text string to be encrypted is limited to 1,400 characters.
 
 ## Privacy
 
