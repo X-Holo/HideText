@@ -65,7 +65,8 @@ const Home: NextPage = () => {
 
     const encoded = enXorStr(plainText, xorKey)
 
-    setFinalLink(`${sys.host_domain}/?c=${encoded}&k=${xorKey}`)
+    const origin = typeof window !== 'undefined' ? window.location.origin : sys.host_domain
+    setFinalLink(`${origin}/?c=${encoded}&k=${xorKey}`)
 
   }
 

@@ -3,8 +3,8 @@
 
 This tool use random numbers to hide your text from search engines finding your internet activity. It has been deployed online: 
 
-- https://hide-text.com/
-- https://hide-text.vercel.app/ (The underlying/legacy URL)
+- https://hide-text.com/ (Recommended)
+- https://hide-text.vercel.app/ (Alternative/Legacy URL)
 
 ## Use Case
 
