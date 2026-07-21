@@ -66,17 +66,8 @@ const Home: NextPage = () => {
     const encoded = enXorStr(plainText, xorKey)
 
     const origin = typeof window !== 'undefined' ? window.location.origin : sys.host_domain
-    console.log('Debug - Current Origin:', origin);
-    console.log('Debug - sys.host_domain:', sys.host_domain);
     setFinalLink(`${origin}/?c=${encoded}&k=${xorKey}`)
 
-  }
-
-  const [debugInfo, setDebugInfo] = useState('')
-  const toggleDebug = () => {
-    const origin = typeof window !== 'undefined' ? window.location.origin : 'N/A'
-    const buildTime = process.env.NEXT_PUBLIC_BUILD_TIME || 'Unknown'
-    setDebugInfo(`Origin: ${origin} | Host: ${sys.host_domain} | Build: ${buildTime}`)
   }
 
   return (
@@ -153,13 +144,8 @@ const Home: NextPage = () => {
             </div>
         }
 
-        <div className='pt-4 flex flex-col items-center gap-2'>
+        <div className='pt-4'>
           <a href={`${sys.proj_repo}`} className='text-sm text-blue-500 underline decoration-transparent hover:decoration-inherit'>goto project repository</a>
-          
-          <button onClick={toggleDebug} className='text-[10px] text-gray-400 opacity-30 hover:opacity-100'>
-            [Debug Build Info]
-          </button>
-          {debugInfo && <p className='text-[10px] text-gray-400'>{debugInfo}</p>}
         </div>
 
       </div>
