@@ -84,7 +84,7 @@ const Home: NextPage = () => {
           c ?
             <div className='bg-white w-full sm:w-4/5 max-w-xl h-auto p-6 border rounded'>
               <div className='p-2'>
-                <p className='w-auto h-auto break-all p-2 border rounded min-h-[4rem] hover:decoration-inherit'>
+                <p className='w-auto h-auto break-all whitespace-pre-wrap p-2 border rounded min-h-[4rem] hover:decoration-inherit'>
                   {result}
                 </p>
               </div>
@@ -92,8 +92,8 @@ const Home: NextPage = () => {
                 <button className='bg-blue-500 hover:bg-blue-700 text-white p-2 rounded'
                   onClick={copyResult}>{copyButtonText}</button>
                 <div className='bg-white hover:text-blue-500 text-black p-2 border border-blue-600 rounded'>
-                  <Link href={'/'}>
-                    <a>Create my hidden text</a>
+                  <Link href={'/'} className="block w-full h-full">
+                    Create my hidden text
                   </Link>
                 </div>
               </div>
