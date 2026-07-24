@@ -34,7 +34,7 @@ In other words, even if one random address is exposed, the others remain undisco
 
 ## Technical Implementation
 
-1. Encryption involves an XOR operation between the plaintext and a random key; decryption involves a second XOR operation to restore the plaintext. This process occurs entirely within the browser.
+1. Encryption and decryption utilize the self-inverse property of the XOR operation: XORing the plaintext with the key yields the ciphertext, while XORing the ciphertext with the key again recovers the original plaintext.
 2. The page displaying the ciphertext uses "noindex" and "canonical" tags to prevent Google from indexing it.
 3. The ciphertext and key are included in the URL. Due to URL length limitations, and to ensure reliability, the text string to be encrypted is limited to 1,400 characters.
 
