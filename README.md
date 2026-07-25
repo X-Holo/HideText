@@ -16,27 +16,25 @@ You can use hide-text.com to generate multiple random addresses:
 
 Clicking on any of these distinct random addresses reveals your actual address: "my_special_name@example.com".
 
-#### Scenario 1:
+You can post "Random Address A" on Sub-A and "Random Address B" on Sub-B.
 
-Let's say you frequent Reddit Sub-A and often leave "Random Address A" as your contact info there.
+### Scenario 1: The random address cannot be retrieved from your real email address
 
-A nosy colleague searches for your email "my_special_name@example.com" on Google but finds nothing. This is because your actual email address isn't posted on Sub-A, and Google neither indexes "Random Address A" nor links it to your email.
+If someone searches for your real email address—"my_special_name@example.com"—on Google, they will not see the "Random Address A" you posted on Sub-A.
 
-In other words, even if someone knows your real email address, they cannot trace it back to your random addresses, thereby effectively protecting your privacy.
+This is because your real email address was not made public on Sub-A, and Google does not link "Random Address A" to your real email address.
 
-#### Scenario 2:
+### Scenario 2: A leak of one random address does not expose the other
 
-Now, imagine an acquaintance from Sub-A wants to pry into your privacy. They know both your email and "Random Address A," so they search for "Random Address A" on Google. However, they cannot find any information about your activities outside of Sub-A.
+If someone learns of "Random Address A" and searches for it on Google, they will only see the record you left on Sub-A. They will not be able to discover "Random Address B," which you posted on Sub-B.
 
-In reality, you are also active on Sub-B, where you use "Random Address B." Since there is no way to deduce "Random Address B" from "Random Address A," your acquaintance from Sub-A has no way of knowing about "Random Address B" and thus cannot discover your activity on Sub-B.
-
-In other words, even if one random address is exposed, the others remain undiscovered, ensuring the continued security of your privacy.
+This is because it is impossible to derive "Random Address B" from "Random Address A."
 
 ## Technical Implementation
 
 1. Encryption and decryption utilize the self-inverse property of the XOR operation: XORing the plaintext with the key yields the ciphertext, while XORing the ciphertext with the key again recovers the original plaintext.
 2. The page displaying the ciphertext uses "noindex" and "canonical" tags to prevent Google from indexing it.
-3. The ciphertext and key are included in the URL. Due to URL length limitations, and to ensure reliability, the text string to be encrypted is limited to 1,400 characters.
+3. All information --- including both the ciphertext and the key --- is contained within the URL. Due to URL length limitations and to ensure reliability, the text string to be encrypted is limited to 1,400 characters.
 
 ## Privacy
 
