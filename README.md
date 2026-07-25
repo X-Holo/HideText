@@ -38,7 +38,7 @@ This is because it is impossible to derive "Random Address B" from "Random Addre
 
 ## Privacy
 
-1. It is a purely static webpage; there is no server-side backend and no database.
+1. A client-side only application with no backend, no database, and zero external network calls.
 2. No cookies, sessions, or other tracking mechanisms are used.
 3. Open source.
 
