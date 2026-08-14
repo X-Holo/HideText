@@ -36,6 +36,19 @@ This is because it is impossible to derive "Random Address B" from "Random Addre
 2. The page displaying the ciphertext uses "noindex" and "canonical" tags to prevent Google from indexing it.
 3. All information --- including both the ciphertext and the key --- is contained within the URL. Due to URL length limitations and to ensure reliability, the text string to be encrypted is limited to 1,400 characters.
 
+### Browser Extension
+
+We also offer a browser extension as an access point; it is currently available on the Chrome, Edge, and Firefox extension stores—simply search for "Hide Text."
+
+Once installed, the extension allows users to generate links containing random strings and decode such links without leaving the current webpage. Here is how to use it:
+
+1. Click on an input field on the webpage;
+2. Click the browser extension button;
+3. Enter text, click the "Random" button, and then click the "Insert" button;
+4. If the inserted link is posted on a forum or blog and is clickable, hovering your mouse over it will reveal the original text;
+
+Moving forward, the extension will serve as the primary access point for this project.
+
 ## Privacy
 
 1. A client-side only application with no backend, no database, and zero external network calls.
