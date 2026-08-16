@@ -2,10 +2,25 @@ import type { NextPage } from 'next'
 import Link from 'next/link'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { enXorStr, deXorStr } from '../libs/encode'
 import { getRandomAlphaNum } from '../libs/random'
 import { sys } from '../config';
+
+const storeUrls: { [k: string]: string } = {
+  chrome: 'https://chrome.google.com/webstore/detail/icdienmhemmkfoaemockjffbadjihmjj',
+  edge: 'https://microsoftedge.microsoft.com/addons/detail/hide-text/ehcfjgmfmnanlnklgiepkegnaaflemdo',
+  // firefox not published yet — leave empty and show Coming soon in UI
+  firefox: ''
+}
+
+function detectStore() {
+  if (typeof navigator === 'undefined') return 'chrome'
+  const ua = navigator.userAgent
+  if (/Firefox/i.test(ua)) return 'firefox'
+  if (/Edg\//i.test(ua)) return 'edge'
+  return 'chrome'
+}
 
 const Home: NextPage = () => {
 
@@ -22,6 +37,12 @@ const Home: NextPage = () => {
 
   const router = useRouter()
   const { c, k } = router.query
+
+  // Initialize to a safe default on server to avoid hydration mismatch.
+  const [store, setStore] = useState<string>('chrome')
+  useEffect(() => {
+    setStore(detectStore())
+  }, [])
 
   // console.log(`deXorStr ${c as string} with ${k as string}`)
 
@@ -144,8 +165,24 @@ const Home: NextPage = () => {
             </div>
         }
 
-        <div className='pt-4'>
-          <a href={`${sys.proj_repo}`} className='text-sm text-blue-500 underline decoration-transparent hover:decoration-inherit'>goto project repository</a>
+        <div className='pt-4 w-full sm:w-4/5 max-w-xl flex justify-center'>
+          <div className='flex flex-col sm:flex-row gap-4 items-center'>
+            {store === 'firefox' ? (
+              <span className='bg-white border border-gray-200 text-gray-400 px-3 py-1.5 rounded-full text-sm cursor-not-allowed'>
+                Install extension (coming soon)
+              </span>
+            ) : (
+              <a href={storeUrls[store] || storeUrls.chrome}
+                target="_blank" rel="noopener noreferrer"
+                className='bg-white border border-gray-200 text-gray-700 px-3 py-1.5 rounded-full text-sm hover:bg-gray-50'>
+                Install extension
+              </a>
+            )}
+            <a href={`${sys.proj_repo}`} target="_blank" rel="noopener noreferrer"
+              className='bg-white border border-gray-200 text-gray-700 px-3 py-1.5 rounded-full text-sm hover:bg-gray-50'>
+              View repository
+            </a>
+          </div>
         </div>
 
       </div>
