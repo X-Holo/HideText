@@ -175,16 +175,25 @@ const Home: NextPage = () => {
               <a href={storeUrls[store] || storeUrls.chrome}
                 target="_blank" rel="noopener noreferrer"
                 className='bg-white border border-gray-200 text-gray-700 px-3 py-1.5 rounded-full text-sm hover:bg-gray-50'>
-                Install extension
+                Install Browser Extension — Encrypt and decrypt without leaving your page
               </a>
             )}
+
+          </div>
+
+        </div>
+        <div className='pt-4 w-full sm:w-4/5 max-w-xl flex justify-center'>
+          <div className='flex flex-col sm:flex-row gap-4 items-center'>
             <a href={`${sys.proj_repo}`} target="_blank" rel="noopener noreferrer"
               className='bg-white border border-gray-200 text-gray-700 px-3 py-1.5 rounded-full text-sm hover:bg-gray-50'>
               View repository
             </a>
+            <a href={`${sys.our_studio}`} target="_blank" rel="noopener noreferrer"
+              className='bg-white border border-gray-200 text-gray-700 px-3 py-1.5 rounded-full text-sm hover:bg-gray-50'>
+              View studio
+            </a>
           </div>
         </div>
-
       </div>
     </>
   )
