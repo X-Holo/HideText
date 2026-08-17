@@ -11,7 +11,7 @@ const storeUrls: { [k: string]: string } = {
   chrome: 'https://chrome.google.com/webstore/detail/icdienmhemmkfoaemockjffbadjihmjj',
   edge: 'https://microsoftedge.microsoft.com/addons/detail/hide-text/ehcfjgmfmnanlnklgiepkegnaaflemdo',
   // firefox not published yet — leave empty and show Coming soon in UI
-  firefox: ''
+  firefox: 'https://addons.mozilla.org/zh-CN/firefox/addon/hide-text/'
 }
 
 function detectStore() {
@@ -167,12 +167,12 @@ const Home: NextPage = () => {
 
         <div className='pt-4 w-full sm:w-4/5 max-w-xl flex justify-center'>
           <div className='flex flex-col sm:flex-row gap-4 items-center'>
-            {store === 'firefox' ? (
+            {!storeUrls[store] ? (
               <span className='bg-white border border-gray-200 text-gray-400 px-3 py-1.5 rounded-full text-sm cursor-not-allowed'>
                 Install extension (coming soon)
               </span>
             ) : (
-              <a href={storeUrls[store] || storeUrls.chrome}
+              <a href={storeUrls[store]}
                 target="_blank" rel="noopener noreferrer"
                 className='bg-white border border-gray-200 text-gray-700 px-3 py-1.5 rounded-full text-sm hover:bg-gray-50'>
                 Install Browser Extension — Encrypt and decrypt without leaving your page
